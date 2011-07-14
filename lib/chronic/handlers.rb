@@ -180,7 +180,7 @@ module Chronic
 
     # Handle scalar-year
     def handle_sy(tokens, options)
-      year = tokens[1].get_tag(ScalarYear).type
+      year = tokens[0].get_tag(ScalarYear).type
       begin
         Span.new(Chronic.time_class.local(year, 1), Chronic.time_class.local(year + 1, 1))
       rescue ArgumentError
